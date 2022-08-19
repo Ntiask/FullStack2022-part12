@@ -1,0 +1,118 @@
+Script started on 2022-08-18 10:48:28+03:00 [TERM="xterm-256color" TTY="/dev/pts/9" COLUMNS="150" LINES="9"]
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m sudo o[Kdocker container lis[K[Ks -a
+[?2004l[sudo] password for niko: 
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+c040d99f2b3e   mongo     "docker-entrypoint.s…"   32 minutes ago   Up 32 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m sudo docker container ls -a[K[7msudo docker exec -it c04 bash[27msudo docker exec -it c04 bash[C[C[C[C[C
+[?2004lroot@c040d99f2b3e:/# [Kroot@c040d99f2b3e:/# mongo
+MongoDB shell version v5.0.10
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("02f171ca-2f55-4e49-96d6-65564ada3973") }
+MongoDB server version: 5.0.10
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+> exit[3G[Jexit[7G
+bye
+root@c040d99f2b3e:/# mongo[1Pexitmongo -u root -p example
+MongoDB shell version v5.0.10
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("307ed457-a526-4a06-afbc-58858ab18f66") }
+MongoDB server version: 5.0.10
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2022-08-18T07:16:06.429+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db t[3G[Jdb [6G[3G[Jdb[5G.todos.find([[3G[Jdb.todos.find([17G{})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("62fde735e2df65c1fc47dea3"), "text" : "Testing123", "done" : true }
+{ "_id" : ObjectId("62fde735e2df65c1fc47dea4"), "text" : "Learn about containers", "done" : false }
+> db.todos.create([[3G[Jdb.todos.create([19G{text:Increase the number of tools in my toolbelt", [3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt",[70G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt"[69G [3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt"[69G, done: f[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: [77G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done:[76G false})[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false})[84G
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:31
+> [3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false})[84G[3G[Jdb.todos.create[1;34m([0m{text:Increase the number of tools in my toolbelt", done: false})[83G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false})[82G[3G[Jdb.todos.create[1;34m([0m{text:Increase the number of tools in my toolbelt", done: false})[83G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false})[82G[3G[Jdb.todos.create[1;34m([0m{text:Increase the number of tools in my toolbelt", done: false})[83G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false})[82G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false })[83G[3G[Jdb.todos.create[1;34m([0m{text:Increase the number of tools in my toolbelt", done: false })[84G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false })[83G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false })[82G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[83G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false, })[84G[3G[Jdb.todos.create[1;34m([0m{text:Increase the number of tools in my toolbelt", done: false, })[85G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false, })[84G[3G[Jdb.todos.create[1;34m([0m{text:Increase the number of tools in my toolbelt", done: false, })[85G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false, })[84G[3G[Jdb.todos.create[1;34m([0m{text:Increase the number of tools in my toolbelt", done: false, })[85G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[86G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[86G
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:31
+> [3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[86G[3G[Jdb.todos.create[1;34m([0m{text:Increase the number of tools in my toolbelt", done: false, })[85G[3G[Jdb.todos.create([1;34m{[0mtext:Increase the number of tools in my toolbelt", done: false, })[84G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[83G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[82G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[81G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[80G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[79G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[78G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[77G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[76G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[75G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[74G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[73G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[72G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[71G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[70G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[69G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[68G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[67G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[66G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[65G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[64G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[63G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[62G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[61G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[60G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[59G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[58G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[57G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[56G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[55G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[54G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[53G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[52G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[51G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[50G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[49G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[48G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[47G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[46G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[45G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[44G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[43G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[42G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[41G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[40G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[39G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[38G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[37G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[36G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[35G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[34G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[33G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[32G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[31G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[30G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[29G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[28G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[27G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[26G[3G[Jdb.todos.create({text:Increase the number of tools in my toolbelt", done: false, })[25G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[26G[3G[Jdb.todos.create({text:"'Increase the number of tools in my toolbelt", done: false, })[27G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[26G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[87G
+uncaught exception: TypeError: db.todos.create is not a function :
+@(shell):1:1
+> [3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[87G[3G[Jdb.todos.create[1;34m([0m{text:"Increase the number of tools in my toolbelt", done: false, })[86G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[78G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[72G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[61G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[58G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[55G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[49G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[46G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[39G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[35G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[26G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[20G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, })[12G[3G[Jdb.todos.create({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[18G[3G[Jdb.todos.creat({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[17G[3G[Jdb.todos.crea({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[16G[3G[Jdb.todos.cre({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[15G[3G[Jdb.todos.cr({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[14G[3G[Jdb.todos.c({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[13G[3G[Jdb.todos.({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[12G[3G[Jdb.todos.i({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[13G[3G[Jdb.todos.in({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[14G[3G[Jdb.todos.ins({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[15G[3G[Jdb.todos.inse({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[16G[3G[Jdb.todos.inser({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[17G[3G[Jdb.todos.insert({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[18G[3G[Jdb.todos.insertO({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[19G[3G[Jdb.todos.insertOn({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[20G[3G[Jdb.todos.insertOne({text:"Increase the number of tools in my toolbelt", done: false, }[1;34m)[0m[21G[3G[Jdb.todos.insertOne({text:"Increase the number of tools in my toolbelt", done: false, })[90G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("62fdefe84896964258b9a915")
+}
+> exit[3G[Jexit[7G
+bye
+root@c040d99f2b3e:/# exit
+exit
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m pwd
+[?2004l/home/niko/Documents/FullStackOpen2022/osa12/part12-containers-applications
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m pwdsudo docker exec -it c04 bash[2Pcontainer ls -aexit[Ksudo docker build -t todo-backend . && sudo docker run -p 3000:3000 todo-backend[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Ksudo docker build -t todo-backend . && sudo docker run -p 3000:3000 todo-backend[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[K[3Plsclearsudo docker build -t todo-backend . && sudo docker run -p 3000:3000 todo-backend[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Ksudo docker container ls -aexec -it c04 bash[2Pcontainer ls -aexit[K[K[K[K[Kls[K[Kclear
+[?2004l[H[2J[3J]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m doi[Kckl[K[K[K[K[K[K[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m script
+[?2004lScript started, output log file is 'typescript'.
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m docker const[K[Ktainer ls -a[1@s[1@u[C[1@d[1@o[1@ 
+[?2004l[sudo] password for niko: 
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+84f37b5e3696   redis     "docker-entrypoint.s…"   13 minutes ago   Up 13 minutes   0.0.0.0:6379->6379/tcp, :::6379->6379/tcp     todo-backend-redis-1
+c040d99f2b3e   mongo     "docker-entrypoint.s…"   3 hours ago      Up 13 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m sudo docker container ls -aexit[Ksudo docker container ls -aexit[Ksudo docker build -t todo-backend . && sudo docker run -p 3000:3000 todo-backend[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[K[3Plsclearsudo docker build -t todo-backend . && sudo docker run -p 3000:3000 todo-backend[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[K[3Plssudo docker container kill 754ls[Kkill 754ls[K[3Pdocker container listexit[Ksudo docker start -i 44aexit[Kdocker container listsudo docker container lskill 754ls[Kclearsudo docker build -t todo-backend . && sudo docker run -p 3000:3000 todo-backend[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Ksudo docker container ls -a[Ksudo docker container ls -a[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kexec it[K[K-ut[K[Kit 84f bash
+[?2004l[?2004hroot@84f37b5e3696:/data# [Kroot@84f37b5e3696:/data# GET KEYS *
+[?2004lbash: GET: command not found
+[?2004hroot@84f37b5e3696:/data# redis-cli GET KEYS *
+[?2004l(error) ERR wrong number of arguments for 'get' command
+[?2004hroot@84f37b5e3696:/data# redis-cli GET KEYS *          KEYS *
+[?2004l(empty array)
+[?2004hroot@84f37b5e3696:/data# redis-cli KEYS *added*
+[?2004l1) "added-todos"
+[?2004hroot@84f37b5e3696:/data# redis-cli KEYS *added*ded*            GET added-todos
+[?2004l"5"
+[?2004hroot@84f37b5e3696:/data# e set   redis-cli GET added-todos[1P[1P[1P[1@s[1@e[1@t[1P[1P[1P[1@S[1@E[1@T added-todoss "9001"
+[?2004lOK
+[?2004hroot@84f37b5e3696:/data# curl localhost:3000/statistics
+[?2004lbash: curl: command not found
+[?2004hroot@84f37b5e3696:/data# e exit
+[?2004lexit
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m curl localhost:3000/statistics
+[?2004l{"added_todos":9001}]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m curl localhost:3000/statistics[1Psudo docker exec -it 84f bashcurl localhost:3000/statistics[Kexit
+[?2004lexit
+Script done.
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m exit
+[?2004lexit
+
+Script done on 2022-08-18 12:52:45+03:00 [COMMAND_EXIT_CODE="0"]

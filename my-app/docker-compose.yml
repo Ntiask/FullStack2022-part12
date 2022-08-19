@@ -1,0 +1,16 @@
+services:
+    library-backend:
+          image: library-backend
+          build:
+            context: .
+            dockerfile: Dockerfile
+          ports:
+            - 4000:4000
+
+    library-frontend:
+      image: library-frontend
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - 3000:3000

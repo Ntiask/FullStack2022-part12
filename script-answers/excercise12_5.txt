@@ -1,0 +1,54 @@
+Script started on 2022-08-18 08:48:51+03:00 [TERM="xterm-256color" TTY="/dev/pts/8" COLUMNS="150" LINES="9"]
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications/todo-app/todo-backend[?2004h[01;32m[niko@paskatalikko[01;37m todo-backend[01;32m]$[00m sudo docker build -t todo-backend . && docker run [K[K[K[K[K[K[K[K[K[K[Ksudo docker run -p 3000:3000 todo-backend
+[?2004l[sudo] password for niko: 
+Sending build context to Docker daemon  557.1kBSending build context to Docker daemon  7.799MBSending build context to Docker daemon  13.67MB
+Step 1/6 : FROM node:16
+ ---> bfb7b2a05614
+Step 2/6 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> 817cb96fc867
+Step 3/6 : COPY --chown=node . .
+ ---> 7fa596dbb776
+Step 4/6 : RUN npm ci --only=production
+ ---> Running in 42198ad12fa8
+[91mnpm[0m[91m WARN config only Use `--omit=dev` to omit dev dependencies from the install.
+[0m
+added 88 packages, and audited 89 packages in 2s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+2 critical severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[91mnpm notice[0m[91m 
+npm notice New minor version of npm available! 8.15.0 -> 8.18.0
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v8.18.0>
+npm notice Run `npm install -g npm@8.18.0` to update!
+npm notice 
+[0mRemoving intermediate container 42198ad12fa8
+ ---> 962652c0116d
+Step 5/6 : USER node
+ ---> Running in e747b2a57c14
+Removing intermediate container e747b2a57c14
+ ---> 975f6e3408e1
+Step 6/6 : CMD npm start
+ ---> Running in c57a371afbb3
+Removing intermediate container c57a371afbb3
+ ---> 3c80a1029b83
+Successfully built 3c80a1029b83
+Successfully tagged todo-backend:latest
+
+> todo-express-backend@0.0.0 start
+> node ./bin/www
+
+[0mGET / [32m200 [0m3.129 ms - 12[0m
+[0mGET / [32m200 [0m1.151 ms - 12[0m
+[0mGET / [32m200 [0m0.529 ms - 12[0m
+^C]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications/todo-app/todo-backend[?2004h[01;32m[niko@paskatalikko[01;37m todo-backend[01;32m]$[00m exit
+[?2004lexit
+
+Script done on 2022-08-18 08:50:52+03:00 [COMMAND_EXIT_CODE="137"]

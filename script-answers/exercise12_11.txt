@@ -1,0 +1,35 @@
+Script started on 2022-08-18 12:53:53+03:00 [TERM="xterm-256color" TTY="/dev/pts/9" COLUMNS="150" LINES="13"]
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m exitscript[1Pclear[2Ppwdclearscript[2Pexit[K[7msudo docker exec -it 84f bash[27msudo docker exec -it 84f bash
+[?2004l[sudo] password for niko: 
+[?2004hroot@84f37b5e3696:/data# [Kroot@84f37b5e3696:/data# redis-cli GET KEYS        KEYS *a
+[?2004l(empty array)
+[?2004hroot@84f37b5e3696:/data# redis-cli KEYS *a*
+[?2004l(empty array)
+[?2004hroot@84f37b5e3696:/data# redis-cli KEYS *a*d*d*e*d*
+[?2004l1) "added-todos"
+[?2004hroot@84f37b5e3696:/data# redis-cli KEYS *added**[Kdded*            ge  g GET added-todos
+[?2004l"9001"
+[?2004hroot@84f37b5e3696:/data# redis-cli GET added-todos[3PKEYS *added**[K[Kexit[Kredis-cli KEYS *a*[Kexit[Kredis-cli KEYS *a*dded*            set added -  -todos[1P[1P[1P[1@S[1@E[1@T added-todos "901 01"
+[?2004lOK
+[?2004hroot@84f37b5e3696:/data# redis-cli SET added-todos "9001"[7PGET added-todos
+[?2004l"9002"
+[?2004hroot@84f37b5e3696:/data# redis-cli GET added-todos[Kredis-cli GET added-todosSET added-todos "9001"[7PGET added-todos[3PKEYS *added*GET added-todosSET added-todos "9001"[7PGET added-todos[KDELETE added-todos
+[?2004lbash: DELETE: command not found
+[?2004hroot@84f37b5e3696:/data# DEL added-todos
+[?2004lbash: DEL: command not found
+[?2004hroot@84f37b5e3696:/data# DEL added-todos[1@r[1@e[1@d[1@i[1@s[1@ [1P[1@-[1@c[1@l[1@i[1@ 
+[?2004l(integer) 1
+[?2004hroot@84f37b5e3696:/data# redis-cli DEL added-todos[10PDEL added-todos[10@redis-cli DEL added-todos[Kexit    exit
+[?2004lexit
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m curl localhost/3000[K[K[K[K[K:3000/statistics
+[?2004l{"added_todos":0}]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m curl localhost:3000/statistics[Kcurl localhost:3000/statistics[1Psudo docker exec -it 84f bashcurl localhost:3000/statistics[1Psudo docker exec -it 84f bashexit[Ksudo docker exec -it 84f bashcurl localhost:3000/statistics[1Psudo docker exec -it 84f bashexit[Ksudo docker exec -it 84f bashcurl localhost:3000/statistics
+[?2004l{"added_todos":1}]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m curl localhost:3000/statistics[1Psudo docker exec -it 84f bash
+[?2004l[?2004hroot@84f37b5e3696:/data# [Kroot@84f37b5e3696:/data# redis  -cli     s set     SET added-todos "9001"
+[?2004lOK
+[?2004hroot@84f37b5e3696:/data# exit
+[?2004lexit
+]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m sudo docker exec -it 84f bashcurl localhost:3000/statistics
+[?2004l{"added_todos":9001}]0;niko@paskatalikko:~/Documents/FullStackOpen2022/osa12/part12-containers-applications[?2004h[01;32m[niko@paskatalikko[01;37m part12-containers-applications[01;32m]$[00m exit
+[?2004lexit
+
+Script done on 2022-08-18 12:58:25+03:00 [COMMAND_EXIT_CODE="0"]
